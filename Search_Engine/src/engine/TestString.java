@@ -9,12 +9,14 @@ public class TestString {
 		//regxChinese();
 		
 		String ss = "a,b;c/桑s德，斯；AB  dD3d！！！dd5×22  2字符@＃￥是％个＆国×经……）——＋－＝串";
-		String p = "[[^0-9]&&[^a-z]&&[^A-Z]&&[^\u4E00-\u9FA5]]+";
-		p = ss.replaceAll(p, " ");
-		System.out.println(p);
-		p = p.toUpperCase();
-		p = separate(p);
-		System.out.println(p);
+//		String p = "[[^0-9]&&[^a-z]&&[^A-Z]&&[^\u4E00-\u9FA5]]+";
+//		p = ss.replaceAll(p, " ");
+//		System.out.println(p);
+//		p = p.toUpperCase();
+//		p = separate(p);
+//		System.out.println(p);
+		System.out.println(separate(ss.toUpperCase()));
+		
 	}
 
 	static CharType getChartType(char c) {
@@ -33,7 +35,9 @@ public class TestString {
 			c = s.charAt(i);
 			curr = getChartType(c);
 			if (curr == CharType.OTHER) {
-				sb.append(c);
+				if (last != CharType.OTHER) {
+					sb.append(' ');
+				}
 			} else if (curr == CharType.UNICODE) {
 				if (last == CharType.OTHER) {
 					sb.append(c);
