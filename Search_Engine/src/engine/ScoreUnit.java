@@ -1,6 +1,6 @@
 package engine;
 
-public class ScoreUnit implements Comparable<ScoreUnit> {
+public class ScoreUnit implements Comparable<ScoreUnit>, Cloneable {
 
 	private String text;
 	
@@ -50,6 +50,10 @@ public class ScoreUnit implements Comparable<ScoreUnit> {
 	@Override
 	public int compareTo(ScoreUnit o) {
 		return o.score - score;
+	}
+	
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
 	}
 	
 }

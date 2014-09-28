@@ -1,7 +1,6 @@
 package engine;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,7 +45,12 @@ public class ScoreCompany {
 	public void merge(ScoreCompany company) {
 		if (company == null) return;
 		for (ScoreUnit unit : company.toList()) {
-			addUnit(unit);
+			try {
+				addUnit((ScoreUnit)unit.clone());
+			} catch (CloneNotSupportedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	
