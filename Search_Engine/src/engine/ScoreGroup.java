@@ -25,4 +25,8 @@ public class ScoreGroup {
 		return group.get(key);
 	}
 	
+	public int size() {
+		return group.size();
+	}
+	
 }

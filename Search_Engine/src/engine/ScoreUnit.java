@@ -10,7 +10,7 @@ public class ScoreUnit implements Comparable<ScoreUnit> {
 		this.text = text;
 	}
 	
-	public void increase(int score) {
+	public void increaseScore(int score) {
 		this.score += score;
 	}
 

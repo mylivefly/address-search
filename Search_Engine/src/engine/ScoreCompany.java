@@ -21,7 +21,7 @@ public class ScoreCompany {
 			su = new ScoreUnit(text);
 			company.put(text, su);
 		} else {
-			su.increase(Keys.SCORE_DUPLICATE);
+			su.increaseScore(Keys.SCORE_DUPLICATE);
 		}
 	}
 	
@@ -34,7 +34,7 @@ public class ScoreCompany {
 		if (su == null) {
 			company.put(unit.getText(), unit);
 		} else {
-			su.increase(unit.getScore());
+			su.increaseScore(unit.getScore());
 		}
 	}
 	
