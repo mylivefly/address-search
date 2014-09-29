@@ -17,6 +17,10 @@ public class TestString {
 //		System.out.println(p);
 		System.out.println(separate(ss.toUpperCase()));
 		
+		String text = separate(ss.toUpperCase());
+		text = text.replaceAll("(AB|C)", "<$1>");
+		System.out.println(text);
+		
 	}
 
 	static CharType getChartType(char c) {

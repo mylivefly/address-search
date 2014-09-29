@@ -14,6 +14,10 @@ public class ScoreUnit implements Comparable<ScoreUnit>, Cloneable {
 		this.score += score;
 	}
 
+	public void setText(String text) {
+		this.text = text;
+	}
+
 	public String getText() {
 		return text;
 	}

@@ -44,7 +44,24 @@ public class Engine {
 				units.remove(maxRows);
 			}
 		}
+		// high light
+		for (ScoreUnit unit : units) {
+			unit.setText(highLight(parts, unit.getText(), "<", ">"));
+		}
 		return units;
 	}
+	
+	private String highLight(String[] words, String text, String prefix, String subfix) {
+		StringBuilder sb = new StringBuilder("(");
+		for (String word : words) {
+			sb.append(word).append('|');
+		}
+		if (sb.length() > 2) {
+			sb.deleteCharAt(sb.length() - 1);
+		}
+		sb.append(')');
+		return text.replaceAll(sb.toString(), prefix + "$1" + subfix);
+	}
+	
 	
 }

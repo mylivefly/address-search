@@ -38,6 +38,9 @@ public class Parser {
 			}
 			last = curr;
 		}
+		if (sb.charAt(0) == ' ') {
+			sb.deleteCharAt(0);
+		}
 		return sb.toString();
 	}
 	

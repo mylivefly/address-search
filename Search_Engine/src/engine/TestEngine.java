@@ -27,8 +27,8 @@ public class TestEngine {
 			br = new BufferedReader(new FileReader(file));
 			buildIndex(br);
 			
-//			search("永嘉", 5);
-//			search("yat tai house", 5);
+			search("永嘉", 5);
+			search("yat tai house", 5);
 			search("漾日", 3);
 			search("漾日新", 3);
 			search("漾日新大", 3);
